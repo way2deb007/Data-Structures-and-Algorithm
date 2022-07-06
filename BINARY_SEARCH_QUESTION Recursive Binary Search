@@ -1,0 +1,7 @@
+int recurseBS(int low, int high, int arr[],int x){
+    if(high<low) return -1;
+    int mid=(low+high)/2;
+    if(arr[mid]==x) return mid;
+    if(arr[mid]<x) return recurseBS(mid+1, high,arr,x);
+    return recurseBS(low,mid-1,arr,x);
+}
