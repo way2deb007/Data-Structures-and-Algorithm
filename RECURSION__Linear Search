@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool LinearSearchREC(int arr[],int size,int k){
+	//base case
+	if(size==0)
+		return false;
+	if(arr[0]==k)
+		return true;
+	int remPart=LinearSearchREC(arr+1,size-1,k);
+	return remPart;
+}
+int main() {
+	int arr[5]={1,5,7,2,11};
+	int k=0;
+	cout<<LinearSearchREC(arr,5,k);
+	return 0;   
+}
